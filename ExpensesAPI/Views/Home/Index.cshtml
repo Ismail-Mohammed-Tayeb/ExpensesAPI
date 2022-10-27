@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    List<Outlay> outlays = new OutlayController().GetOutlays().ToList();
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    @{
+
+        foreach (var item in outlays)
+        {
+            @*Write($"<h1>{item.Price}</h1></br>\n");*@
+            <script>document.getElementById("#bodyDiv").innerHTML += "<h1>@item.Price</h1></br>";
+            </script>
+
+        }
+    }
+    <div id="bodyDiv">
+
+    </div>
+
+</div>
+
